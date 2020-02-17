@@ -1,0 +1,156 @@
+@import "reset";
+@import "settings";
+
+* {
+  font-family: $poppins;
+}
+
+@keyframes purples {
+  0% { background-color: $background; }
+  25% { background-color: #273c75; }
+  50% { background-color: #192a56; }
+  75% { background-color: #273c75; }
+  100% { background-color: $background; }
+}
+
+@keyframes reds {
+  0% { background-color: #c0392b; }
+  25% { background-color: #e74c3c; }
+  50% { background-color: #d35400; }
+  75% { background-color: #e74c3c; }
+  100% { background-color: #c0392b; }
+}
+
+@keyframes greens {
+  0% { background-color: #1abc9c; }
+  25% { background-color: #2ecc71; }
+  50% { background-color: #27ae60; }
+  75% { background-color: #2ecc71; }
+  100% { background-color: #1abc9c; }
+}
+
+body {
+  background-color: $background;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  &.purple {
+    animation: purples 10s ease-in-out infinite;
+  }
+
+  &.red {
+    animation: reds 10s ease-in-out infinite;
+  }
+
+  &.green {
+    animation: greens 10s ease-in-out infinite;
+  }
+}
+
+#controls {
+  position: fixed;
+  top: 10%;
+  right: 15%;
+  text-align: right;
+
+  span {
+    border: 2px solid #9c88ff;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    position: relative;
+    font-family: $robotoBold;
+    transition: all .5s linear;
+    cursor: pointer;
+    background-color: #1d1d1d;
+    color: #4d4d4d;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate( -50%, -50% );
+      font-weight: 800;
+    }
+
+    &:nth-of-type( 1 ) {
+      &:hover {
+        background-color: #273c75;
+      }
+    }
+
+    &:nth-of-type( 2 ) {
+      &:hover {
+        background-color: #e74c3c;
+      }
+    }
+
+    &:nth-of-type( 3 ) {
+      &:hover {
+        background-color: #1abc9c;
+      }
+    }
+  }
+}
+
+/* Clock */
+#clock {
+  font-size: 1rem;
+  transform: scale( $clockScale );
+  letter-spacing: $digitSpacing;
+}
+
+/* Quote Slider */
+.slider {
+  width: 600px;
+  margin: 3.5rem auto;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    p {
+      margin: .75rem 0;
+
+      &:first-of-type {
+        font-style: italic;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+#sunrise {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 220px;
+  border-top: 8px solid #f1c40f;
+  background-image: url( "../imgs/waves.jpg" );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
