@@ -171,7 +171,7 @@ body {
   }
 }
 
-@media only screen and ( max-width: 410px ) {
+@media only screen and ( max-height: 680px ) {
   #clock {
     transform: scale( 3.5 );
   }
@@ -179,10 +179,21 @@ body {
   #sunrise {
     width: 100%;
     z-index: 5;
-    height: 90vh;
+    height: 80vh;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: rgba( 0, 0, 0, 0.25 );
+      z-index: 15;
+    }
   }
 
-  .slider {
+  .slider,
+  #clock,
+  #controls {
     z-index: 10;
   }
 }
