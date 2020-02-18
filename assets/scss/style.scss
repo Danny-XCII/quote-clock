@@ -105,7 +105,7 @@ body {
 /* Clock */
 #clock {
   font-size: 1rem;
-  transform: scale( $clockScale );
+  transform: scale( $initialClockScale );
   letter-spacing: $digitSpacing;
 }
 
@@ -153,4 +153,36 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media only screen and ( max-width: 620px ) {
+  #quote-container {
+    width: 100%;
+  }
+
+  .slider {
+    width: 88%;
+  }
+}
+
+@media only screen and ( max-width: 480px ) {
+  #clock {
+    transform: scale( 4.5 );
+  }
+}
+
+@media only screen and ( max-width: 410px ) {
+  #clock {
+    transform: scale( 3.5 );
+  }
+
+  #sunrise {
+    width: 100%;
+    z-index: 5;
+    height: 90vh;
+  }
+
+  .slider {
+    z-index: 10;
+  }
 }
