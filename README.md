@@ -1,6 +1,6 @@
 # Motivation Clock
 
-A one page app with a persistent clock, quote slider and CSS animated backgrounds - also includes
+A one page app with a clock, quote slider and CSS animated backgrounds - also includes
 the option to switch between a couple of different background themes.
 
 Built using HTML5, SCSS, PHP and JavaScript. Also utilises my 
