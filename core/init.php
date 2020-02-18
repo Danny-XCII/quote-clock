@@ -1,12 +1,7 @@
 <?php
 
 require_once "core/classes/database.class.php";
-
-$config = new stdClass();
-$config->host = "shareddb-s.hosting.stackcp.net";
-$config->dbname = "quote-clock-313235d7fb";
-$config->username = "quote-clock-313235d7fb";
-$config->password = "7hydbn92zu";
+require_once "core/config.php";
 
 $database = new Database( $config );
 $quotes = $database->getQuotes( 6 );
