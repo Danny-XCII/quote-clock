@@ -171,6 +171,12 @@ body {
   }
 }
 
+@media only screen and ( min-height: 681px ) and ( max-height: 750px ) {
+  #sunrise {
+    height: 180px;
+  }
+}
+
 @media only screen and ( max-height: 680px ) {
   #clock {
     transform: scale( 3.5 );
